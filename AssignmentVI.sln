@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssignmentVI", "AssignmentVI\AssignmentVI.csproj", "{42DC6B6B-F541-4616-AC13-4A6380A382C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicateFilesFinder", "DuplicateFilesFinder\DuplicateFilesFinder.csproj", "{70EDDD74-2D24-4796-949C-9D5AC1158A7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42DC6B6B-F541-4616-AC13-4A6380A382C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DC6B6B-F541-4616-AC13-4A6380A382C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DC6B6B-F541-4616-AC13-4A6380A382C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DC6B6B-F541-4616-AC13-4A6380A382C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70EDDD74-2D24-4796-949C-9D5AC1158A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70EDDD74-2D24-4796-949C-9D5AC1158A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70EDDD74-2D24-4796-949C-9D5AC1158A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70EDDD74-2D24-4796-949C-9D5AC1158A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E775477-985A-4C71-9739-C9725A5B9CB9}
+	EndGlobalSection
+EndGlobal

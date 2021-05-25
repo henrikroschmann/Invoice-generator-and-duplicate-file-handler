@@ -1,0 +1,103 @@
+﻿<Window x:Class="DuplicateFilesFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1200">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open Folders"  Click="MenuItemFolders_OnClick"/>
+                    <Separator />
+                    <MenuItem Header="_Exit" Click="MenuItemExit_OnClick"/>
+                </MenuItem>
+                <MenuItem Header="_Help">
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="30"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                <TextBlock Text="Files in scanned Folders" FontSize="25" VerticalAlignment="Bottom" ></TextBlock>
+                <Button Margin="10" VerticalAlignment="Bottom" x:Name="BtMoreFiles" IsEnabled="False" Click="BtMoreFiles_OnClick">Add additional folder</Button>
+            </StackPanel>
+            
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="Duplicated files based on criteria" FontSize="25" VerticalAlignment="Bottom" ></TextBlock>
+
+            <ListView Grid.Row="1" Grid.Column="1" x:Name="LwFilesToScan" >
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FileName}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <ListView Grid.Row="1" Grid.Column="3" x:Name="LwSelectedFiles">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox Tag="{Binding FileName}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+</DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FileName}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Grid.Row="2" Grid.Column="1" >
+                <TextBlock>Select in what way you would like to compare the files</TextBlock>
+                <StackPanel Orientation="Horizontal" x:Name="RadioLand">
+                    <RadioButton Margin="5" Click="RadioButtonFileName_OnClick">FileName</RadioButton>
+                    <RadioButton Margin="5" Click="RadioButtonModified_OnClick">Modified</RadioButton>
+                    <RadioButton Margin="5" Click="RadioButtonSize_OnClick">Size</RadioButton>
+                    <RadioButton Margin="5" Click="RadioButtonFileType_OnClick">File Type</RadioButton>
+                </StackPanel>
+            </StackPanel>
+            <Button Grid.Row="2" Grid.Column="3" Height="20" Width="150" x:Name="BtDelete" Click="BtDelete_OnClick">Delete files in selected list</Button>
+        </Grid>
+    </Grid>
+</Window>
